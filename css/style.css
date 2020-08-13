@@ -1,0 +1,73 @@
+/* 
+COLORS:
+light blue: #8e9efc
+medium blue:#5a73fc
+dark blue:#1c3eff
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777777;
+    padding: 30px;
+}
+
+header{
+    background-image: 
+    linear-gradient(to right bottom, rgba(142, 158, 252, .8),rgba(28, 62, 255, .8)),
+    url('../img/background1.jpg');
+    background-size: cover;
+    background-position: top;
+    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
+    position: relative;
+    height: 95vh;
+}
+
+.text-box{
+      /*Giá trị này dùng để thiết lập vị trí của một phần tử theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*Xác định một dịch chuyển 2D*/
+    transform: translate(-50%,-50%);    
+}
+
+.logo{
+    height: 70px;
+}
+
+.logo-box{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 15px;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 18px;
+}

@@ -40,6 +40,7 @@ header{
     left: 50%;
     /*Xác định một dịch chuyển 2D*/
     transform: translate(-50%,-50%);    
+    text-align: center; /*can giua cho text box*/
 }
 
 .logo{
@@ -72,4 +73,37 @@ header{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 18px;
+}
+
+.btn,
+.btn:link,  /* link the a khi chua duoc click*/
+.btn:visited{       /* link the a khi da duoc click*/
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    /*
+        display: inline; cac Item nam tren 1 dong, va cac Item ko the set widt va height
+        display: block; cac Item luôn được xuống dòng và chiếm toàn bộ width nếu không được set, set được width, height, margin, padding
+         đầy đủ 4 hướng
+        display: inline-block; các Item được xếp cùng nhau trên 1 dòng, có thuộc tính của block, set được width, height, margin, padding
+    */
+    display: inline-block;
+    border-radius: 100px;
+    font-size: 16px;
+}
+
+.btn-white{
+    color: #777777;
+    background-color: #fff;
+}
+
+.btn:hover{ /*chọn các liên kết được hover (di chuyển chuột lên thành phần).*/
+    transform: translateY(-3px); /*Xác định một dịch chuyển 2D theo trục Y.*/
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }

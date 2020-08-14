@@ -29,6 +29,8 @@ header{
     /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
     position: relative;
     height: 95vh;
+    /*https://bennettfeely.com/clippy/*/
+    clip-path: ellipse(65% 58% at 50% 34%);
 }
 
 .text-box{

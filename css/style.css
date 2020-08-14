@@ -26,7 +26,8 @@ header{
     url('../img/background1.jpg');
     background-size: cover;
     background-position: top;
-    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
+    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 
+    mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
     position: relative;
     height: 95vh;
     /*https://bennettfeely.com/clippy/*/
@@ -34,7 +35,8 @@ header{
 }
 
 .text-box{
-      /*Giá trị này dùng để thiết lập vị trí của một phần tử theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
+      /*Giá trị này dùng để thiết lập vị trí của một phần tử
+       theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -90,6 +92,7 @@ header{
     display: inline-block;
     border-radius: 100px;
     font-size: 16px;
+    position: relative;
 }
 
 .btn-white{
@@ -106,4 +109,27 @@ header{
     outline: none;
     transform: translateY(-1px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* giống như clone 1 button và tạo ra hiệu ứng cho clone_button*/
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    z-index: -1;
+    transition: all 0.4s;   /*chinh thoi gian hieu ung*/
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6); 
+    opacity: 0; /*là độ mờ mặc định của một phần tử*/
 }

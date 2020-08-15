@@ -1,0 +1,82 @@
+https://codepen.io/pen/
+
+Trong file HTML.index
+    
+<nav>
+    <ul class="navigation">
+        <li class="list"><a class="list__link" href="/redirect?Id=8PbzEa1t5qA%2fxnPzl6pMfg%3d%3d">Dashboard</a></li>
+        <li class="list"><a class="list__link" href="/redirect?Id=8PbzEa1t5qA%2fxnPzl6pMfg%3d%3d">Pricing</a></li>
+        <li class="list"><a class="list__link" href="/redirect?Id=8PbzEa1t5qA%2fxnPzl6pMfg%3d%3d">Contact</a></li>
+    </ul>
+    <div>
+        <a href="/redirect?Id=8PbzEa1t5qA%2fxnPzl6pMfg%3d%3d" class="btn-main">Sign Up</a>
+        <a href="/redirect?Id=8PbzEa1t5qA%2fxnPzl6pMfg%3d%3d" class="btn-hot">Sign In</a>
+    </div>
+</nav>
+
+Trong file CSS
+*{
+  margin:0;
+  padding:0;
+}
+
+nav{
+  margin:30px;
+  background-color: #aaa111
+}
+
+
+khai báo tên biến sử dụng cú pháp sau:
+
+$tên_biến: gía trị của biến
+
+2 biến $margin-nav và $bg-color-nav để thay thế cho giá trị của margin và background-color
+
+File CSS
+
+$margin-nav: 30px;
+$bg-color-nav: #aaa111;
+*{
+  margin:0;
+  padding:0;
+}
+nav{
+  margin: $margin-nav;
+  background-color: $bg-color-nav;
+}
+
+Nesting trong CSS
+SASS	                                                CSS
+li{                                                     li{
+  margin: 10px;                                             margin: 10px;
+                                                        }
+  a{                                                    li a{
+    color:red;                                          color: red;
+    text-decoration:none;                               text-decoration:none;
+  }                                                     }
+}	
+
+SASS + BEM                                              CSS 
+
+.list{                                                  .list{
+  margin: 10px;                                           margin: 10px;
+                                                        }
+
+  &__link{                                              .list__link{
+      color:red;                                             color:red;
+      text-decoration: none;                                 text-decoration: none;
+  }                                                     }
+}
+
+*Kí hiệu & sẽ thay thế cho tên class được khai báo ở bên ngoài (trong trường hợp trên là .list)
+
+Công thức khai báo property cho các element HTML khi kết hợp giữa BEM và SASS
+.block{
+  
+  &__element{
+
+    &--modifier{
+
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuyetVV1995/CSS_SASS.git"
+  },
+  "author": "QuyetVV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuyetVV1995/CSS_SASS/issues"
+  },
+  "homepage": "https://github.com/QuyetVV1995/CSS_SASS#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

@@ -60,7 +60,11 @@ header{
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 60px;
-
+    animation-name: animationtest;
+    animation-duration: 2s; /*Chay hieu ung trong 2s*/
+    animation-iteration-count: 2;   /*Chay hieu ung: 2 lan*/
+    animation-delay: 2s;    /*thoi gian delay truoc khi chay hieu ung: 2s*/
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
 }
 
 .heading-primary-main{
@@ -68,6 +72,7 @@ header{
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 15px;
+    animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary-sub{
@@ -75,6 +80,7 @@ header{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 18px;
+    animation: moveInRight 1s ease-out;
 }
 
 .btn,
@@ -132,4 +138,53 @@ header{
 .btn:hover::after{
     transform: scaleX(1.4) scaleY(1.6); 
     opacity: 0; /*là độ mờ mặc định của một phần tử*/
+}
+
+.btn-animated{
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; /* Giu trang thai keyframe dau tien trong suot thoi gian delay*/
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

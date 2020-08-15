@@ -1,0 +1,81 @@
+Mixins trong Sass
+Mixins là cách mà Sass dùng để dùng lại 1 đoạn code lặp đi lặp lại nhiều lần.
+Cú pháp khai báo mixin:
+
+@mixin tênMixin {
+
+  ......
+
+}
+
+@mixin tênMixin($variables1, $variables2, ...) {
+  
+}
+
+VD:
+@mixin CSSlink($color, $status) {
+  color: $color;
+  text-decoration: $status;
+}
+
+.list{
+  margin: 10px;
+  
+  &__link{
+      @include CSSlink(red,none);
+  }
+
+Functions trong Sass
+Việc sử dụng Function trong Sass dùng để khai báo các giá trị của property 
+với các công thức toán học (thường là chỉ sử dụng cho số đo như width, margin, padding,…)
+
+@function TênFunction ($variable1, $variable2, ...) {
+
+      @return Value;
+
+}
+
+VD:
+@mixin CSSlink($color, $status) {
+  color: $color;
+  text-decoration: $status;
+}
+
+@function calMargin($a, $b){
+  @return $a*$b;
+}
+
+.list{
+  margin: calMargin(2,5)*1px;
+  
+  &__link{
+      @include CSSlink(red,none);
+  }
+}
+
+Extends trong Sass
+Extends trong Sass cũng tương tự như mixins.
+
+%tênExtend {
+
+    .....
+}
+
+VD:
+%CSSlink{
+  color: red;
+  text-decoration: none;
+}
+
+.list{
+  margin: calMargin(2,5)*1px;
+  
+  &__link{
+      @extend %CSSlink;
+  }
+}
+
+Sự khác biết giữa extends và mixins chính là cách chúng compile sang CSS. 
+Sử dụng extends thì code sẽ được compile 1 cách ngắn gọn hơn và không bị lặp lại, 
+còn mixins thì sẽ copy lặp đi lặp lại đoạn code mà nó chứa.
+Tham khao hinh anh su dung Mixins va Extends dinh kem

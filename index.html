@@ -13,16 +13,23 @@
     <title>SELFTAUGHT | Skill Website </title>
 </head>
 <body>
-    <header>
-        <div class="logo-box">
-            <img src="/img/logooutline.png" class="logo" alt="logo">
+    <!-- header là block, vì nó đứng riêng rẽ và tồn tại độc lập -->
+    <header class="header">
+        <!-- Những class như logo-box, logo và text-box là element vì nó chỉ xuất hiện trong BLOCK header, phụ thuộc vào header. 
+        Đổi tên class theo qui tắc block__element ta có các class -->
+        <div class="header__logo-box">
+            <img src="/img/logooutline.png" class="header__logo" alt="logo">
         </div>
-       <div class=" text-box"> 
+       <div class="header__text-box"> 
+        <!-- heading-primary là 1 BLOCK vì nó đứng độc lập và 
+            có thể tái sử dụng ở những phần khác trong webpage, không phụ thuộc BLOCK header
+        đổi tên class theo qui tắc BLOCK—MODIFIER  -->
             <h3 class="heading-primary">
-                <span class="heading-primary__main">selftaught</span>
-                <span class="heading-primary__sub"> is how you survive</span>
+                <span class="heading-primary--main">selftaught</span>
+                <span class="heading-primary--sub"> is how you survive</span>
             </h3>
-            <a href="#" class="btn btn-white btn-animated">See our courses</a>
+            <!-- .btn cũng là block (có thể tái sử dụng và không phụ thuộc và block header) với 2 MODIFIER là animated và white  -->
+            <a href="#" class="btn btn--white btn--animated">See our courses</a>
        </div>
        
     </header>

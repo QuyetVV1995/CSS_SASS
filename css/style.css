@@ -37,7 +37,7 @@ header{
     clip-path: ellipse(65% 58% at 50% 34%);
 }
 
-.text-box{
+.header__text-box{
       /*Giá trị này dùng để thiết lập vị trí của một phần tử
        theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
     position: absolute;
@@ -48,11 +48,11 @@ header{
     text-align: center; /*can giua cho text box*/
 }
 
-.logo{
+.header__logo{
     height: 70px;
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute;
     top: 30px;
     left: 30px;
@@ -70,7 +70,7 @@ header{
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
 }
 
-.heading-primary__main{
+.heading-primary--main{
     display: block;
     font-size: 5rem;
     font-weight: 400;
@@ -78,7 +78,7 @@ header{
     animation: moveInLeft 1s ease-out;
 }
 
-.heading-primary__sub{
+.heading-primary--sub{
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -104,7 +104,7 @@ header{
     position: relative;
 }
 
-.btn-white{
+.btn--white{
     color: #777777;
     background-color: #fff;
 }
@@ -134,7 +134,7 @@ header{
     transition: all 0.4s;   /*chinh thoi gian hieu ung*/
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
@@ -143,7 +143,7 @@ header{
     opacity: 0; /*là độ mờ mặc định của một phần tử*/
 }
 
-.btn-animated{
+.btn--animated{
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; /* Giu trang thai keyframe dau tien trong suot thoi gian delay*/
 }

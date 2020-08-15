@@ -1,0 +1,14 @@
+Sass là 1 CSS preprocessor (Xử lí code trước khi compile sang CSS),
+hay rõ hơn là 1 extension của CSS có chức năng bổ sung các thuộc tính cho code CSS thuần
+Sử dụng Sass có rất nhiều thuộc tính được thêm vào CSS trong đó, các thuộc tính sau là vô cùng nổi bất, và được ứng dụng phổ biến:
+
+- VARIABLES: Sử dụng để tái sử dụng các giá trị như colors, font-size (CSS thuần cũng có nhưng Sass sẽ giúp khai báo 1 cách dễ dàng hơn rất nhiều).
+- NESTING: Có thể select element con và khai báo thuộc tính ngay bên trong selector cha (đây cũng là 1 thuộc tính sẽ giúp BEM hoạt động hiệu quả với Sass).
+- OPERATORS: Có thẻ cho các công thức tính toán như (+, - , *, /) vào trong code CSS
+- PARTIALS AND IMPORTS: Viết code CSS ở các files khách nhau rồi import chúng vào cùng 1 file (Việc này sẽ giúp chúng ta tổ chức code được thành các components, các part nhỏ, dễ quản lí, mở rộng)
+- MIXINS: Giúp tại sự dụng các đoạn CSS code (Sẽ được giới thiệu ở bài học sau)
+- FUNCTIONS: Giống với mixins nhưng có tham số (Tính năng giống với các ngôn ngữ lập trình như python, java)
+- EXTENDS: Kế thừa thuộc tính của các element khác trong element đang khai báo.
+- CONTROL DIRECTIVES: Viết code phức tạp sử dụng vòng lặp và conditional (if, for, …)
+
+code Sass chúng ta có 2 loại: SASS va SCSS (dễ nhìn hơn, dễ hiểu hơn, giống với CSS thuần)

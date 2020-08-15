@@ -70,7 +70,7 @@ header{
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
 }
 
-.heading-primary-main{
+.heading-primary__main{
     display: block;
     font-size: 5rem;
     font-weight: 400;
@@ -78,7 +78,7 @@ header{
     animation: moveInLeft 1s ease-out;
 }
 
-.heading-primary-sub{
+.heading-primary__sub{
     display: block;
     font-size: 2rem;
     font-weight: 700;

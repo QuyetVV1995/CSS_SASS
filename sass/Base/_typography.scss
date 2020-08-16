@@ -1,0 +1,42 @@
+/*Phần setting font size và các properties liên quan đến text của element body sẽ đưa vào file typography
+
+file typography sẽ chứa các setting về fontsize của body, phần text như heading
+*/
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey;
+   
+}
+
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    animation-name: animationtest;
+    animation-duration: 2s;     /*Chay hieu ung trong 2s*/
+    animation-iteration-count: 2;      /*Chay hieu ung: 2 lan*/
+    animation-delay: 2s;         /*thoi gian delay truoc khi chay hieu ung: 2s*/
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
+
+    &--main{
+        display: block;
+        font-size: 6.2rem;
+        font-weight: 400;
+        letter-spacing: 1.5rem;
+        animation: moveInLeft 1s ease-out;
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.8rem;
+        animation: moveInRight 1s ease-out
+    }
+
+}
+

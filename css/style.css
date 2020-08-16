@@ -1,202 +1,184 @@
-/* 
-COLORS:
-light blue: #8e9efc
-medium blue:#5a73fc
-dark blue:#1c3eff
-*/
+@charset "UTF-8";
+/*
+code Sass thành các component
 
+Base/, Components/, Layout/, Pages/, Abstracts/, Themes/, Vendors/ (BEM VÀ CÁCH ĐẶT TÊN CHO CLASS)
+*/
+/*  Tên của các files trong component có cấu trúc _<tên file>.scss */
+/*
+    import file variables lại trong file main.scss với cú pháp
+
+@import ‘địa chỉ file’; 
+*/
+/*
+folder abstracts chứa các file _mixins.scss,  _variables.scss , _functions.scss.
+*/
+/*
+Chuyển hết các variables color vào file _variables.scss
+*/
+/*
+Base folder gồm các file _animations.scss, _base.scss, _utilities.scss, _typography.scss
+*/
+/*file animation sẽ chứa các keyframe và ta chuyển toàn bộ keyframe trong file main.scss và import trở lại file main.scss*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*file base chứa các khởi tạo ban đầu của các element như *, html, body*/
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
 
 body {
-    font-family: "Lato", sans-serif;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+/*Phần setting font size và các properties liên quan đến text của element body sẽ đưa vào file typography
+
+file typography sẽ chứa các setting về fontsize của body, phần text như heading
+*/
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777777; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  animation-name: animationtest;
+  animation-duration: 2s;
+  /*Chay hieu ung trong 2s*/
+  animation-iteration-count: 2;
+  /*Chay hieu ung: 2 lan*/
+  animation-delay: 2s;
+  /*thoi gian delay truoc khi chay hieu ung: 2s*/
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6.2rem;
     font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: #777777;
-    padding: 30px;
-    box-sizing: border-box;
-}
+    letter-spacing: 1.5rem;
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.8rem;
+    animation: moveInRight 1s ease-out; }
 
-header{
-    background-image: 
-    linear-gradient(to right bottom, rgba(142, 158, 252, .8),rgba(28, 62, 255, .8)),
-    url('../img/background1.jpg');
-    background-size: cover;
-    background-position: top;
-    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 
+/*  Component sẽ chứa các phần có thể tái sử dụng được, những element có vai trò hiển thị độc lập với website landing page, 
+hiện tại chúng ta có 1 component là button, tạo file _buttons.scss
+*/
+/*
+chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng quên import lại file main.scss */
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  position: relative;
+  transition: all .2s; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: all .4s; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  color: #777777;
+  background-color: #fff; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; }
+
+/* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
+
+Chuyển code phần .header sang _header.scss và import trở lại main.scss */
+.header {
+  background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background1.jpg");
+  background-size: cover;
+  background-position: top;
+  /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 
     mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
-    position: relative;
-    height: 95vh;
-    /*https://bennettfeely.com/clippy/*/
-    clip-path: ellipse(65% 58% at 50% 34%);
-}
-
-.header__text-box{
-      /*Giá trị này dùng để thiết lập vị trí của một phần tử
-       theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
+  position: relative;
+  height: 95vh;
+  -webkit-clip-path: ellipse(60% 60% at 50% 33%);
+  clip-path: ellipse(60% 60% at 50% 33%); }
+  .header__text-box {
+    /*Giá trị này dùng để thiết lập vị trí của một phần tử
+         theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
     position: absolute;
     top: 50%;
     left: 50%;
     /*Xác định một dịch chuyển 2D*/
-    transform: translate(-50%,-50%);    
-    text-align: center; /*can giua cho text box*/
-}
-
-.header__logo{
-    height: 70px;
-}
-
-.header__logo-box{
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /*can giua cho text box*/ }
+  .header__logo {
+    height: 7rem; }
+  .header__logo-box {
     position: absolute;
-    top: 30px;
-    left: 30px;
-}
+    top: 3rem;
+    left: 3rem; }
 
-
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    animation-name: animationtest;
-    animation-duration: 2s; /*Chay hieu ung trong 2s*/
-    animation-iteration-count: 2;   /*Chay hieu ung: 2 lan*/
-    animation-delay: 2s;    /*thoi gian delay truoc khi chay hieu ung: 2s*/
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
-}
-
-.heading-primary--main{
-    display: block;
-    font-size: 5rem;
-    font-weight: 400;
-    letter-spacing: 15px;
-    animation: moveInLeft 1s ease-out;
-}
-
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 18px;
-    animation: moveInRight 1s ease-out;
-}
-
-.btn,
-.btn:link,  /* link the a khi chua duoc click*/
-.btn:visited{       /* link the a khi da duoc click*/
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    /*
-        display: inline; cac Item nam tren 1 dong, va cac Item ko the set widt va height
-        display: block; cac Item luôn được xuống dòng và chiếm toàn bộ width nếu không được set, set được width, height, margin, padding
-         đầy đủ 4 hướng
-        display: inline-block; các Item được xếp cùng nhau trên 1 dòng, có thuộc tính của block, set được width, height, margin, padding
-    */
-    display: inline-block;
-    border-radius: 100px;
-    font-size: 1.6rem;
-    position: relative;
-}
-
-.btn--white{
-    color: #777777;
-    background-color: #fff;
-}
-
-.btn:hover{ /*chọn các liên kết được hover (di chuyển chuột lên thành phần).*/
-    transform: translateY(-3px); /*Xác định một dịch chuyển 2D theo trục Y.*/
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active{
-    outline: none;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* giống như clone 1 button và tạo ra hiệu ứng cho clone_button*/
-.btn::after{
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 100px;
-    z-index: -1;
-    transition: all 0.4s;   /*chinh thoi gian hieu ung*/
-}
-
-.btn--white::after{
-    background-color: #fff;
-}
-
-.btn:hover::after{
-    transform: scaleX(1.4) scaleY(1.6); 
-    opacity: 0; /*là độ mờ mặc định của một phần tử*/
-}
-
-.btn--animated{
-    animation: moveInBottom 0.5s ease-out 0.75s;
-    animation-fill-mode: backwards; /* Giu trang thai keyframe dau tien trong suot thoi gian delay*/
-}
-
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    80% {
-        transform: translateX(-10px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/*px element = rem element * root fontsize of browser*/
-/* re-setup font-size*/
-html{
-    /* font-size: 7px; */
-    font-size: 62.5%;
-}
-
-/* 16px*62.5% = 10px */
+/* Pages
+Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có file _home.scss 
+(project chúng ta chỉ có 1 page nên đó là file duy nhất có trong phần này và tạm thời chúng ta chưa có code để ném vào trong file này */

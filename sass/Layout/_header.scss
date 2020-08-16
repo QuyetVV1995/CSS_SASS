@@ -1,0 +1,34 @@
+.header{
+    background-image: 
+    linear-gradient(to right bottom , rgba($color-primary-light, 0.8), rgba($color-primary-dark,0.8)),
+    url('../img/background1.jpg');
+    background-size: cover;
+    background-position: top;
+    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 
+    mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
+    position: relative;
+    height: 95vh;
+    -webkit-clip-path: ellipse(60% 60% at 50% 33%);
+    clip-path: ellipse(60% 60% at 50% 33%);
+
+    &__text-box{
+        /*Giá trị này dùng để thiết lập vị trí của một phần tử
+         theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+        /*Xác định một dịch chuyển 2D*/
+      transform: translate(-50%,-50%);    
+      text-align: center;       /*can giua cho text box*/
+    }
+
+    &__logo {
+        height: 7rem;
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+    }
+}

@@ -1,197 +1,45 @@
+/*
+code Sass thành các component
 
-$color-primary:#5a73fc;
-$color-primary-light:#8e9efc;
-$color-primary-dark:#1c3eff;
-$color-grey:#777777;
-$color-white:#fff;
-$color-black: #000;
+Base/, Components/, Layout/, Pages/, Abstracts/, Themes/, Vendors/ (BEM VÀ CÁCH ĐẶT TÊN CHO CLASS)
+*/
 
-*,
-*::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+/*  Tên của các files trong component có cấu trúc _<tên file>.scss */
 
-body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: $color-grey;
-    padding: 30px;
-    box-sizing: border-box;
-}
+/*
+    import file variables lại trong file main.scss với cú pháp
 
-header{
-    background-image: 
-    linear-gradient(to right bottom, rgba($color-primary-light, 0.8) rgba($color-primary-dark,0.8),
-    url('../img/background1.jpg'));
-    background-size: cover;
-    background-position: top;
-    /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 
-    mà không gây ảnh hưởng tới việc hiển thị ban đầu cũng như các phần tử khác*/
-    position: relative;
-    height: 95vh;
+@import ‘địa chỉ file’; 
+*/
 
-    clip-path: ellipse(65% 58% at 50% 34%);
+/*
+folder abstracts chứa các file _mixins.scss,  _variables.scss , _functions.scss.
+*/
+@import './Abstracts/variables';
 
-    &__text-box{
-        /*Giá trị này dùng để thiết lập vị trí của một phần tử
-         theo phần tử cha có giá trị thuộc tính position là relative hoặc absolute*/
-      position: absolute;
-      top: 50%;
-      left: 50%;
-        /*Xác định một dịch chuyển 2D*/
-      transform: translate(-50%,-50%);    
-      text-align: center;       /*can giua cho text box*/
-    }
+/*
+Base folder gồm các file _animations.scss, _base.scss, _utilities.scss, _typography.scss
+*/
+@import './Base/animations';
 
-    &__logo{
-        height: 70px;
-    }
+@import './Base/base';
 
-    &__logo-box{
-        position: absolute;
-        top: 30px;
-        left: 30px;
-    }
-}
+@import './Base/typography';
 
+/*  Component sẽ chứa các phần có thể tái sử dụng được, những element có vai trò hiển thị độc lập với website landing page, 
+hiện tại chúng ta có 1 component là button, tạo file _buttons.scss
+*/
+@import './Components/buttons';
 
-.heading-primary{
-    color: $color-white;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    animation-name: animationtest;
-    animation-duration: 2s;     /*Chay hieu ung trong 2s*/
-    animation-iteration-count: 2;      /*Chay hieu ung: 2 lan*/
-    animation-delay: 2s;         /*thoi gian delay truoc khi chay hieu ung: 2s*/
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);  /*Tao hieu ung bang cach chia khoang thoi gian. Tham khao cubic-bezier*/
+/* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
-    &--main{
-        display: block;
-        font-size: 5rem;
-        font-weight: 400;
-        letter-spacing: 15px;
-        animation: moveInLeft 1s ease-out;
-    }
+Chuyển code phần .header sang _header.scss và import trở lại main.scss */
+@import './Layout/header';
 
-    &--sub{
-        display: block;
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 18px;
-        animation: moveInRight 1s ease-out;
-    }
-
-}
-
-
-.btn{
-    &:link, 
-    &:visited{     
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 15px 40px;
-        
-        display: inline-block;
-        border-radius: 100px;
-        font-size: 1.6rem;
-        position: relative;
-    }
-
-    &--white{
-        color: $color-grey;
-        background-color: $color-white;
-        &::after{
-            background-color: $color-white;
-        }
-    }
-
-    &:hover{ 
-        transform: translateY(-3px); 
-        box-shadow: 0 5px 20px rgba($color-black, 0.2);
-        &::after{
-            transform: scaleX(1.4) scaleY(1.6); 
-            opacity: 0; 
-        }
-    }
-
-    &:active{
-        outline: none;
-        transform: translateY(-1px);
-        box-shadow: 0 5px 20px rgba($color-black, 0.2);
-    }
-    &::after{
-        content: "";
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 100px;
-        z-index: -1;
-        transition: all 0.4s; 
-    }
-
-    &--animated{
-        animation: moveInBottom 0.5s ease-out 0.75s;
-        animation-fill-mode: backwards; 
-    }
-}
+/* Pages
+Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có file _home.scss 
+(project chúng ta chỉ có 1 page nên đó là file duy nhất có trong phần này và tạm thời chúng ta chưa có code để ném vào trong file này */
 
 
 
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    80% {
-        transform: translateX(-10px)
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-html{
-
-    font-size: 62.5%;
-}
 

@@ -2,8 +2,8 @@
 
 .row{
     /*chọn các class có bắt đầu là col-*/
-    [class^="col-"]{
-        background-color: yellow;
+    [class^="col-"]
+    {
         float: left;
         &:not(:last-child){ /*col cuối cùng*/
             margin-right: $gutter-horizontal;
@@ -18,7 +18,6 @@
     }
     max-width: $grid-width;
     margin: 0 auto;
-    background-color: $color-primary-light;
 
     .col-1-of-2{
         /* chia khoảng cách trong 1 row*/

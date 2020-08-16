@@ -26,12 +26,12 @@ Base folder gồm các file _animations.scss, _base.scss, _utilities.scss, _typo
 @import './Base/base';
 
 @import './Base/typography';
-
+@import './Base/ultilities';
 /*  Component sẽ chứa các phần có thể tái sử dụng được, những element có vai trò hiển thị độc lập với website landing page, 
 hiện tại chúng ta có 1 component là button, tạo file _buttons.scss
 */
 @import './Components/buttons';
-
+@import './Components/composition';
 /* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
 Chuyển code phần .header sang _header.scss và import trở lại main.scss */
@@ -40,7 +40,8 @@ Chuyển code phần .header sang _header.scss và import trở lại main.scss 
 
 /* Pages
 Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có file _home.scss 
-(project chúng ta chỉ có 1 page nên đó là file duy nhất có trong phần này và tạm thời chúng ta chưa có code để ném vào trong file này */
+ */
+@import './Pages/home';
 
 
 

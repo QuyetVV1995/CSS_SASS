@@ -17,6 +17,7 @@ folder abstracts chứa các file _mixins.scss,  _variables.scss , _functions.sc
 */
 @import './Abstracts/variables';
 
+
 /*
 Base folder gồm các file _animations.scss, _base.scss, _utilities.scss, _typography.scss
 */
@@ -35,6 +36,7 @@ hiện tại chúng ta có 1 component là button, tạo file _buttons.scss
 
 Chuyển code phần .header sang _header.scss và import trở lại main.scss */
 @import './Layout/header';
+@import './Layout/grid';
 
 /* Pages
 Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có file _home.scss 

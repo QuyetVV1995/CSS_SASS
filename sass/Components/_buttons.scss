@@ -53,6 +53,15 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
             background-color: $color-white;
         }
     }
+    
+    &--blue {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
 
     &--animated {
         animation: moveInBottom .5s ease-out .75s;

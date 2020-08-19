@@ -1,0 +1,60 @@
+.testimonial{
+    width: 80%;
+    padding: 6rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    box-shadow: 0 3rem 6rem rgba($color-black, .35);
+    font-size: $default-font-size;
+    border-radius: 100rem;
+    background-color: rgba($color-white, 1);
+    padding: 9rem;
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        background-color: orangered;
+        float: left;
+        position: relative;
+
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem);
+        margin-top: 1rem;
+        
+        // su dung shape-outside để chữ sẽ nằm theo viền hình tròn của shape
+        shape-outside: circle(50% at 50% 50%);
+    }
+
+    &__img{
+        width: 100%;
+        transform: translateY(-2rem);
+        transition: all 0.2s;
+    }
+    // &__shape có position: relative để &__caption có thể hiển thị đè lên &__img.
+    // Tiếp theo là set position cho &__caption là absolute và chỉnh vị trí.
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        color: $color-white;
+        text-transform:  uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.2s;
+    }
+
+    // Khi hover caption từ dưới hiện lên nên ta sử dụng pseudo-class :hover với opacity và vị trí của caption là được.
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+
+    // Đối với &__img là bức ảnh bị tối đi, và bị làm nhòe cũng như phóng to ra 1 chút xíu
+    // Ở đây sử 1 property của CSS đó là filter (là property dùng chỉnh đồ mờ, sáng hoặc màu sắc cho các element)
+    // blur (độ mờ), brightness (độ sáng)
+    &:hover &__img{
+        transform: scale(1.05);
+        filter: blur(.5rem) brightness(70%);
+    }
+}

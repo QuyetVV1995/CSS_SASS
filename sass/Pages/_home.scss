@@ -19,3 +19,9 @@
     padding: 25rem 0 10rem 0;
     margin-top: -20rem;
 }
+
+// set position: relative sẽ dùng để chúng ta set background-video về sau (background video sẽ có position: absollute)
+.section-testimonials {
+    position: relative;
+    padding: 5rem 0;
+}

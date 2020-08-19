@@ -183,7 +183,7 @@
         </div>
     </section>
 
-        <section class="section-courses" id="section-courses">
+    <section class="section-courses" id="section-courses">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">
                     our courses
@@ -314,7 +314,75 @@
             <div class="u-center-text">
                 <a href="#" class="btn btn--blue">See all our courses</a>
             </div>
-        </section>
+    </section>
+
+
+    <!-- Trong thẻ testimonial lại chia làm 2 phần nhỏ:
+Phần chứa Ảnh (img.testimonial__img) và tên khách hàng (figcaption.testimonial__caption) nằm trong thẻ figure.testimonial__shape.
+Trong đó, phần image và caption được comment lại để chúng ta sẽ căn chỉnh css cho testimonial__shape trước và sẽ dễ ví dụ và quan sát hơn
+Phần text gồm tiêu đề (h3.heading-tertiary) và lời nhận xét (thẻ p) nằm trong thẻ div.testimonial__text -->
+    <section class="section-testimonials">
+
+       <div class="bg-video">
+            <video class="bg-video__content" autoplay muted loop>
+                <source src="img/Boulevard.mp4" type="video/mp4">
+                <source src="img/Boulevard.webm" type="video/webm">
+                 Your browser is not supported
+            </video>
+        </div>
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                testimonials
+            </h2>
+        </div>
+        <div class="row">
+            <div class="testimonial">
+                <figure class="testimonial__shape">
+                    <img src="./img/person1.jpg" class="testimonial__img" alt="photo1">
+                    <figcaption class="testimonial__caption">
+                        Lionel Meshi
+                    </figcaption>
+                </figure>
+                <div class="testimonial__text">
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        thank for your guide
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Incidunt repellat tenetur officia quis quasi,
+                        temporibus neque reiciendis quaerat exercitationem quibusdam?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Possimus dolorem labore nam?
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <figure class="testimonial__shape">
+                    <img src="./img/person2.jpg" class="testimonial__img" alt="photo2">
+                    <figcaption class="testimonial__caption">
+                        Hellarri Cshinson
+                    </figcaption>
+                </figure>
+                <div class="testimonial__text">
+                    <h3 class="heading-tertiary u-margin-bottom-small">
+                        very helpful course
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Incidunt repellat tenetur officia quis quasi,
+                        temporibus neque reiciendis quaerat exercitationem quibusdam?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Possimus dolorem labore nam?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="u-center-text u-margin-top-big u-margin-bottom-big">
+            <a href="#" class="btn-text">read all the testimonials &rarr;</a>
+        </div>
+    </section>
+
 
 </body>
 </html>

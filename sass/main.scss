@@ -37,6 +37,8 @@ hiện tại chúng ta có 1 component là button, tạo file _buttons.scss
 @import './Components/testimonials';
 @import './Components/bg-video';
 @import './Components/enroll';
+@import './Components/form';
+@import './Components/footer';
 /* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
 Chuyển code phần .header sang _header.scss và import trở lại main.scss */
@@ -47,6 +49,10 @@ Chuyển code phần .header sang _header.scss và import trở lại main.scss 
 Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có file _home.scss 
  */
 @import './Pages/home';
+
+
+
+
 
 
 

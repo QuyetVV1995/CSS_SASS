@@ -416,6 +416,122 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
   .enroll__form {
     padding: 6rem; }
 
+.form__group:not(:last-child) {
+  margin-bottom: 1rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.5rem 2rem;
+  color: inherit;
+  border: none;
+  border-radius: 0.2rem;
+  border-bottom: 3px solid transparent;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 80%; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid #5a73fc; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #777777; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+  transition: all 0.3s; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block; }
+
+.form__radio-group {
+  width: 45%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 0.5rem solid #5a73fc;
+  border-radius: 10rem;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem; }
+
+.form__radio-button::after {
+  opacity: 0;
+  content: "";
+  display: block;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #5a73fc; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
+.form__radio-input {
+  display: none; }
+
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 20rem;
+    height: auto; }
+  .footer__title {
+    display: block;
+    color: #5a73fc; }
+  .footer__copyright {
+    border-top: 1px solid #f7f7f7;
+    padding-top: 2rem;
+    width: 70%;
+    float: right; }
+  .footer__navigation {
+    border-top: 1px solid #f7f7f7;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    background-color: #333;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5rem; }
+  .footer__link:hover, .footer__link:active {
+    color: #5a73fc;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.05); }
+
 /* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
 Chuyển code phần .header sang _header.scss và import trở lại main.scss */

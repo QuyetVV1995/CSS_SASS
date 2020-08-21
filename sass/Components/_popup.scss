@@ -1,0 +1,85 @@
+@import '../Abstracts/mixins';
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    // Ẩn đi một phần tử bạn có thể dùng display: none hoặc visibility: hidden visibility: collapse tuy nhiên lưu ý có sự khác nhau: 
+    // visibility:hidden ẩn đi phần tử, nhưng phần tử vẫn chiếm chỗ trong trang hiện thị.
+    visibility: hidden;
+    transition: all 0.5s;
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+
+    &__content{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        border-radius: 3rem;
+        display: table;
+        overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.5);
+    }
+
+    &__left{
+        width: 33.333333%;
+        display: table-cell;
+   } 
+
+   &__right{
+        width: 66.666667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+   }
+
+   &__text {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+
+    // column-count chính là số cột được chia, column-gap là khoảng cách giữa các cột, column-rule là vạch ngăn cách giữa các cột, 
+    // còn hyphens dùng để khi có chữ quá dài mà chữ đó phải xuống dòng thì sẽ có gạch nối giữa 2 phần của dòng đó.
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey;
+
+    hyphens: auto;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark-1;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+        }
+        &:hover{
+            color: $color-primary;
+        }
+
+    }
+
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.4s 0.2s;
+    }
+
+
+}

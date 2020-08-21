@@ -407,6 +407,15 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
     width: 100%;
     object-fit: cover; }
 
+.enroll {
+  background-image: radial-gradient(150% 200% ellipse at -15%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url("../img/background3.jpg");
+  background-size: cover;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  height: 50rem; }
+  .enroll__form {
+    padding: 6rem; }
+
 /* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
 Chuyển code phần .header sang _header.scss và import trở lại main.scss */
@@ -492,3 +501,7 @@ Sẽ chứa các phần sass về từng trang như ở đây chúng ta sẽ có
 .section-testimonials {
   position: relative;
   padding: 5rem 0; }
+
+.section-enroll {
+  padding: 10rem 0;
+  background-image: linear-gradient(to right bottom, #8e9efc, #1c3eff); }

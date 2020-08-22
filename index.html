@@ -130,9 +130,20 @@
     
             <div class="col-1-of-2">
                <div class="composition"> 
-                    <img src="./img/img1.png" alt="photo1" class="composition__photo composition__photo--p1">
-                    <img src="./img/img2.jpg" alt="photo2" class="composition__photo composition__photo--p2">
-                    <img src="./img/img3.png" alt="photo3" class="composition__photo composition__photo--p3">
+                    <img srcset="./img/img1.png 1920w, ./img/img1.png 600w " alt="photo1"
+                    sizes="(max-width:900px) 13vw, (max-width:600px) 20vw, 270px" 
+                    src="./img/img1.png"
+                    class="composition__photo composition__photo--p1">
+
+                    <img srcset="./img/img1.png 1920w, ./img/img1.png 600w " alt="photo2"
+                    sizes="(max-width:900px) 13vw, (max-width:600px) 20vw, 270px" 
+                    src="./img/img2.png" 
+                    class="composition__photo composition__photo--p2">
+
+                    <img srcset="./img/img3.png 1920w, ./img/img1.png 600w " alt="photo3"
+                    sizes="(max-width:900px) 13vw, (max-width:600px) 20vw, 270px" 
+                    src="./img/img2.png" 
+                    class="composition__photo composition__photo--p3">
                </div>
             </div>
         </div>
@@ -430,7 +441,11 @@ Phần text gồm tiêu đề (h3.heading-tertiary) và lời nhận xét (thẻ
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="./img/logopng.png" class="footer__logo">
+            <picture>
+                <source media="(max-width:600px)" srcset="./img/logopng-small.png 1x"> 
+                <img srcset="./img/logopng.png" class="footer__logo">
+            </picture>
+
             <h3 class="heading-secondary footer__title">
                 SelfTaught
             </h3>

@@ -1,4 +1,18 @@
 .enroll {
+    @include respond(tab-land){
+       background-image: radial-gradient(150% 200% ellipse at -15%, rgba($color-white, 0.8) 0%,
+       rgba($color-white, 0.8) 65%,
+       transparent 35%),
+       url('../../img/background3.jpg');
+    }
+    @include respond(tab-port){
+       background-image: linear-gradient(to right,
+       rgba($color-white, 0.8) 0%,
+       rgba($color-white, 0.8) 65%,
+       url('../../img/background3.jpg'),
+       );
+     }
+
     background-image: 
      radial-gradient( 150% 200% ellipse at -15%,
          rgba($color-white, .8) 50%,
@@ -10,6 +24,12 @@
     height: 50rem;
     
     &__form{
+        @include respond(tab-land){
+            width: 65%;
+        }
+        @include respond(tab-port){
+            width: 100%;
+        }
         padding: 6rem;     
     }
 }

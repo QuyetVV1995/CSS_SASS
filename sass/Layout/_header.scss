@@ -1,7 +1,12 @@
 .header{
+    @media (min-resolution: 192dpi) and (max-width: 900px){
+        background-image:
+        linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)),
+        url('../../img/background1.jpg');
+    }
     background-image: 
     linear-gradient(to right bottom , rgba($color-primary-light, 0.8), rgba($color-primary-dark,0.8)),
-    url('../img/background1.jpg');
+    url('../../img/background1.jpg');
     background-size: cover;
     background-position: top;
     /*Giá trị này thường được sử dụng để thiết lập vị trí của phần tử 

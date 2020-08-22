@@ -17,6 +17,14 @@
         cursor: pointer;
         text-align: center;
         box-shadow: 0 1rem 3rem rgba($color-black, .15);
+        @include respond(tab-port){
+           top: 4rem;
+           right: 4rem;
+        }
+        @include respond(phone){
+            top: 3.5rem;
+            right: 3.5rem;
+         }
     }
 
     &__background {
@@ -29,6 +37,14 @@
         background-image: radial-gradient($color-primary, $color-primary-dark);
         z-index: 1000;
         transition: transform .8s;
+        @include respond(tab-port){
+            top: 4.5rem;
+            right: 4.5rem;
+         }
+         @include respond(phone){
+            top: 4rem;
+            right: 3.5rem;
+         }
     }
 
     &__nav {
@@ -143,7 +159,11 @@
         top: 0;
         transform: rotate(-135deg);
     }
-
- 
-
 }
+
+.header{
+    @include respond(phone){
+        clip-path: ellipse(60% 50% at 50% 20%);
+    }
+}
+

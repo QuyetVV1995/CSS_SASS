@@ -58,10 +58,22 @@ Base folder gồm các file _animations.scss, _base.scss, _utilities.scss, _typo
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 75%; } }
 
 body {
   padding: 3rem;
   box-sizing: border-box; }
+  @media (max-width: 900px) {
+    body {
+      padding: 0px; } }
 
 /*Phần setting font size và các properties liên quan đến text của element body sẽ đưa vào file typography
 
@@ -93,12 +105,19 @@ body {
     font-weight: 400;
     letter-spacing: 1.5rem;
     animation: moveInLeft 1s ease-out; }
+    @media (max-width: 600px) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.8rem;
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 600px) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -111,6 +130,12 @@ body {
   color: transparent;
   -webkit-background-clip: text;
   transition: all 0.2s; }
+  @media (max-width: 900px) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(5deg) scale(1.1);
     text-shadow: 0.5rem, 1rem, 2rem rgba(0, 0, 0, 0.2); }
@@ -496,9 +521,15 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media (max-width: 900px) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media (max-width: 900px) {
+      .footer__logo-box {
+        margin-bottom: 6rem; } }
   .footer__logo {
     width: 20rem;
     height: auto; }
@@ -510,10 +541,19 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
     padding-top: 2rem;
     width: 70%;
     float: right; }
+    @media (max-width: 900px) {
+      .footer__copyright {
+        width: 100%;
+        text-align: center;
+        float: none; } }
   .footer__navigation {
     border-top: 1px solid #f7f7f7;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 900px) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -605,6 +645,14 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
   cursor: pointer;
   text-align: center;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
+  @media (max-width: 900px) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
+  @media (max-width: 600px) {
+    .navigation__button {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -616,6 +664,14 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
   background-image: radial-gradient(#5a73fc, #1c3eff);
   z-index: 1000;
   transition: transform .8s; }
+  @media (max-width: 900px) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
+  @media (max-width: 600px) {
+    .navigation__background {
+      top: 4rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -674,11 +730,33 @@ chuyển toàn bộ code của block .btn sang file _buttons.scss và đừng qu
   .navigation__icon::before, .navigation__icon::after {
     content: "";
     position: absolute;
-    left: 0; }
+    left: 0;
+    transition: all .2s; }
   .navigation__icon::before {
     top: -.8rem; }
   .navigation__icon::after {
     top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
+
+@media (max-width: 600px) {
+  .header {
+    clip-path: ellipse(60% 50% at 50% 20%); } }
 
 /* Layout Chứa file _header.scss (Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, …)
 
@@ -721,12 +799,22 @@ Chuyển code phần .header sang _header.scss và import trở lại main.scss 
     .row [class^="col-"]:not(:last-child) {
       /*col cuối cùng*/
       margin-right: 6rem; }
+      @media (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          width: 100% !important; } }
   .row::after {
     content: "";
     display: table;
     clear: both; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 600px) {
+      .row:not(:last-child) {
+        margin-bottom: 5rem; } }
+  @media (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row .col-1-of-2 {
     /* chia khoảng cách trong 1 row*/
     width: calc((100% - 6rem)/ 2); }
